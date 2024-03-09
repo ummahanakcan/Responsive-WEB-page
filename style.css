@@ -1,0 +1,701 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 6px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.col {
+  margin: 2rem auto;
+  width: 70%;
+  padding: 1rem;
+}
+
+.left {
+  float: none;
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 25px;
+}
+
+.right {
+  float: none;
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 25px;
+}
+
+.img-bg {
+  background-image: url(https://media.istockphoto.com/id/1315152008/tr/foto%C4%9Fraf/pasaport-u%C3%A7ak-biletleri-sar%C4%B1-valiz-g%C3%BCne%C5%9F-%C5%9Fapkas%C4%B1-ve-sar%C4%B1-arka-plan-%C3%BCzerinde-koruyucu-y%C3%BCz.jpg?s=2048x2048&w=is&k=20&c=90O24_mz5cQyUyv4KLOE85Z48fE5heUyS7mb1i2SJ7s=);
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 100%;
+  height: 80%;
+  background-size: cover;
+
+  background-position: center;
+
+  z-index: -3;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: calc(112px + 1rem);
+  width: 300px;
+  min-height: 340px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.5s ease, height 0.2s ease;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+  html {
+    font-size: 7px;
+  }
+
+  .img-bg {
+    height: 80%;
+  }
+
+  .col {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: 400px;
+    min-height: 440px;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+  html {
+    font-size: 8px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  html {
+    font-size: 9px;
+  }
+  .col {
+    width: 33.333%;
+  }
+
+  .left {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 210px;
+  }
+
+  .right {
+    float: right;
+    width: 50%;
+    padding-right: 210px;
+    padding-left: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  html {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+section {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+
+/* navbar */
+
+nav {
+  color: #212529;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+.logo-box .logo {
+  color: #212529;
+  font-weight: 700;
+  font-size: 3.2;
+}
+
+.logo-box {
+  float: left;
+  padding-top: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.nav-links {
+  float: right;
+}
+
+.nav-links .nav-item {
+  float: left;
+  margin: 0.4rem;
+}
+
+.nav-links .nav-link {
+  color: #212529;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: block;
+  padding: 1.6rem;
+  letter-spacing: 0.1rem;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 3px;
+  background-color: #212529;
+  border-radius: 5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-item a:hover::after {
+  transform: scaleX(0.9);
+}
+
+.nav-links .nav-icon {
+  display: none;
+}
+
+.navbar.sticky {
+  background-color: #f2be1d;
+}
+
+@media (max-width: 992px) {
+  .logo-box {
+    float: none;
+    text-align: left;
+  }
+
+  .nav-links {
+    float: none;
+  }
+  .nav-links.responsive li:not(:first-child) {
+    display: none;
+  }
+
+  .nav-links .nav-link {
+    font-size: 2rem;
+    padding-left: 0;
+  }
+
+  .nav-links .nav-item {
+    float: none;
+    text-align: left;
+  }
+
+  .nav-links .nav-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 3rem;
+  }
+
+  .nav-item a:hover::after {
+    transform: scaleX(0.125);
+  }
+
+  .nav-links li:first-child a:hover::after {
+    transform: scaleX(0);
+  }
+}
+
+/* header */
+
+.img-body {
+  position: relative;
+}
+
+.about h1 {
+  color: #fff;
+  font-size: 5.6rem;
+  word-spacing: 10px;
+}
+
+.star-light {
+  border: none;
+  border-top: 0.4rem solid #fff;
+  max-width: 25rem;
+  margin: 3rem auto;
+  overflow: visible;
+  height: 0;
+}
+
+.star-yellow {
+  border: none;
+  border-top: 0.4rem solid #212529;
+  max-width: 25rem;
+  margin: 3rem auto;
+  overflow: visible;
+  height: 0;
+}
+
+.star-light::after {
+  content: "\f005";
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
+  font-size: 3.2rem;
+  position: relative;
+  top: -3rem;
+  background-color: #212529;
+  padding: 0 8px;
+}
+
+.s-white {
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
+  font-size: 3.2rem;
+  position: relative;
+  top: -5rem;
+  background-color: #212529;
+  padding: 0 8px;
+}
+
+/* portfolio */
+
+#portfolio h2 {
+  font-size: 4.8rem;
+  color: #212529;
+}
+
+.star-dark {
+  border: none;
+  border-top: 0.4rem solid #212529;
+  max-width: 25rem;
+  margin: 2.5rem auto;
+  overflow: visible;
+  height: 0;
+}
+
+.star-dark::after {
+  content: "\f005";
+  font-family: "Font Awesome 5 Free";
+  color: #212529;
+  font-weight: 900;
+  font-size: 3.2rem;
+  position: relative;
+  top: -3rem;
+  background-color: #fff;
+  padding: 0 8px;
+}
+
+.portfolio-item {
+  position: relative;
+}
+
+.portfolio-item img {
+  display: block;
+}
+
+.img-fluid1 {
+  width: 100%;
+  height: 30rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #212529;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.information {
+  border: 1px solid #fff;
+  padding: 0.5rem 0.8rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.img-overlay .icon {
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio-item:hover .img-overlay {
+  opacity: 0.8;
+}
+
+.about {
+  background-color: #212529;
+  color: #fff;
+  width: 100%;
+}
+
+.about-text {
+  text-align: left;
+}
+
+.about h2 {
+  font-size: 4.8rem;
+}
+
+.about-text .text {
+  font-size: 2rem;
+}
+
+/* bottons */
+
+.btn-large {
+  font-size: 2rem;
+  padding: 2.2rem 1.6rem;
+}
+
+.btn {
+  margin-top: 4rem;
+
+  font-weight: 400;
+  display: inline-block;
+
+  border: 2px solid transparent;
+
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-social {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 5rem;
+}
+
+.btn-outline {
+  border-color: #212529;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  color: #212529;
+  background-color: #fff;
+}
+
+.btn-primary {
+  background-color: #a0a1b0;
+  border-color: #a0a1b0;
+  padding: 1.2rem 1rem;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #212529;
+  border-color: #212529;
+}
+
+.contact h2 {
+  font-size: 4.8rem;
+  color: #212529;
+}
+
+.contact-form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-group {
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+  border: none;
+  width: 100%;
+  display: block;
+  font-size: 2.4rem;
+}
+
+.form-group input:focus {
+  outline: 0;
+}
+
+/* FOOTER */
+
+footer {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #f2be1d;
+  color: #212529;
+  text-align: center;
+}
+
+footer h4 {
+  font-size: 2.4rem;
+}
+
+footer p {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+ul buton {
+  margin-left: 1rem;
+}
+
+.copy-right {
+  background-color: #1a252f;
+  padding-bottom: 2.4rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Register/Login */
+
+.wrapper1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper.active-popup {
+  transform: scale(1);
+}
+.wrapper.active {
+  height: 520px;
+}
+
+.wrapper .form-box.login {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+  transition: none;
+  transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+.wrapper .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: #040403;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+
+.form-box h2 {
+  font-size: 3rem;
+  color: #040403;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #040403;
+  margin: 30px 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #9d9d9f;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #9d9d9f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  line-height: 57px;
+  color: #9d9d9f;
+}
+
+.remember-forgot {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input {
+  accent-color: #040403;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  text-decoration: none;
+  color: black;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.btn1 {
+  width: 100%;
+  height: 45px;
+  background: #040403;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.login-register {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register p a:hover {
+  text-decoration: underline;
+}

@@ -4,9 +4,11 @@ I recently attended a Front-end Bootcamp that introduced me to HTML, CSS, and Ja
 
 This project I prepared after Is Software Right for Me? Front-End Bootcamp Patika.dev. This journey has solidified my interest in the dynamic field of front-end web development, motivating me to explore it further.
 
-<video controls src="Document - Google Chrome 2024-03-09 18-41-21.mp4" title="Title"></video>
+https://github.com/ummahanakcan/Responsive-WEB-page/assets/157521781/6f7f5ef4-92f7-4add-a95a-a96aae7b9cb5
 
-<video controls src="Document - Google Chrome 2024-03-09 21-43-30.mp4" title="Title"></video>
+
+ https://github.com/ummahanakcan/Responsive-WEB-page/assets/157521781/18ef9ec4-f31c-4743-9407-5c8181a720c7
+
 
 ### Built with
 
